@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>check_email_that_it_contain_a_btw_5_to12</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( CONTAINS(MID( Email , 5, 7),&quot;a&quot;) , True, False)</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>email contai a between 5 to 7 so its not allowed</errorMessage>
+</ValidationRule>
