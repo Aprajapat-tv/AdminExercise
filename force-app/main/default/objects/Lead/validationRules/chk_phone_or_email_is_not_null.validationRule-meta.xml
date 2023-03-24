@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>chk_phone_or_email_is_not_null</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND( ISBLANK( Email ),ISBLANK( Phone )), True,False)</errorConditionFormula>
+    <errorMessage>Please enter Phone number or email any one</errorMessage>
+</ValidationRule>
