@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>check_Phone_Number</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND(  ISPICKVAL( Select_Country__c ,&quot;United State&quot; ) ,LEN( Phone ) &lt;10 ) , True, False )</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Please must have 10 digits phone number.</errorMessage>
+</ValidationRule>
