@@ -41,6 +41,10 @@
                 <behavior>Edit</behavior>
                 <field>Next_Step__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Reason__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
