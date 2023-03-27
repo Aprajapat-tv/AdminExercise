@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>chklengthofemail</name>
+        <dataType>Number</dataType>
+        <expression>LEN({!store_email})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>store_email</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Email}</expression>
+    </formulas>
+    <formulas>
+        <name>updaemail</name>
+        <dataType>String</dataType>
+        <expression>IF(LEN({!$Record.Email})&gt;=20, {!$Record.Email}, {!$Record.Email} + &quot;z&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>updated_email</name>
+        <dataType>String</dataType>
+        <expression>IF({!chklengthofemail}&gt;=20, {!$Record.Email}, {!$Record.Email} + &quot;z&quot;)</expression>
+    </formulas>
+    <interviewLabel>add email if its less than 20 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>add email if its less than 20</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>update_email</name>
+        <label>update email</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>updaemail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>update_email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
