@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>checking_email_is_not_start_with</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( OR(LEFT( Email ,4)=&quot;info&quot;,LEFT( Email ,7)=&quot;contact&quot;,LEFT( Email ,6)=&quot;Career&quot;),True,False)</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>email does not  starts with info@, contact@, Career@</errorMessage>
+</ValidationRule>
