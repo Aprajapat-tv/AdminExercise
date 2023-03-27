@@ -122,6 +122,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Next_Step__c</fieldItem>
+                <identifier>RecordNext_Step_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Industry</fieldItem>
                 <identifier>RecordIndustryField</identifier>
             </fieldInstance>
