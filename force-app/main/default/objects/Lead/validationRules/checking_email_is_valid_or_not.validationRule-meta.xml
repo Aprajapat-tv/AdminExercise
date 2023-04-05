@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>checking_email_is_valid_or_not</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( OR(RIGHT( Email ,5)=&quot;games&quot;,RIGHT( Email ,6)=&quot;garden&quot;,RIGHT( Email ,5)=&quot;glass&quot;,RIGHT( Email ,4)=&quot;free&quot;,RIGHT( Email ,4)=&quot;talk&quot;) , True,False)</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>email is not allowed for lead</errorMessage>
+</ValidationRule>
