@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EmailIsNotContainsThisOrNotAllowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( OR(OR(LEFT( Email ,4)=&quot;info&quot;,LEFT( Email ,7)=&quot;contact&quot;,LEFT( Email ,6)=&quot;Career&quot;),OR(RIGHT( Email ,5)=&quot;games&quot;,RIGHT( Email ,6)=&quot;garden&quot;,RIGHT( Email ,5)=&quot;glass&quot;,RIGHT( Email ,4)=&quot;free&quot;,RIGHT( Email ,4)=&quot;talk&quot;)),True,False)</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>email does not  starts with info@, contact@, Career@ or this l email is not allowed for lead</errorMessage>
+</ValidationRule>
